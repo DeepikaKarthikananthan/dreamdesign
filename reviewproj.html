@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url("bedroom2.jpg"); /* Replace "background-image.jpg" with the path to your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: 'review.php', // Replace with the correct URL for the PHP script that handles form submission
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function(response) {
+                        displayAlert(response);
+                    },
+                    error: function() {
+                        displayAlert('Error storing review');
+                    }
+                });
+            });
+
+            function displayAlert(response) {
+                if (response.success) {
+                    alert(response.message);
+                    // You can perform additional actions or update the UI here if needed
+                } else {
+                    alert(response.message);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>REVIEW AFTER CONSULTATION</h1>
+        <form method="POST" action="review.php">
+            <label for="name">Name:</label>
+            <input type="text" name="cname" id="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="cemail" id="email">
+            <br>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" id="rating" min="1" max="5" required>
+            <br>
+            <label for="review">Review:</label>
+            <textarea name="reviewdet" id="review" rows="4" cols="50" required></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

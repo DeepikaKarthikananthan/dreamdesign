@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interior Designing Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     // background-image: linear-gradient(rgb(221, 142, 155),rgb(109, 109, 175), lightpink);
+    }
+
+    /* Set up the main container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header styles */
+    header {
+      text-align: center;
+    //  margin-bottom: 40px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 48px; /* Increased header size */
+      color: #171717;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(247, 215, 3, 0.5); /* Added text shadow */
+    }
+
+    p {
+      font-size: 18px;
+      color: #940505;
+    }
+
+    /* Image gallery styles */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 70vh; /* Set slideshow height to half of the viewport height */
+      overflow: hidden;
+    }
+
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    /* Picture with button styles */
+    .picture-with-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+      height: 300px; /* Set a fixed height for the divs */
+      flex-basis: 33.33%; /* Set equal width for all three divs */
+      margin-right: 20px; /* Set spacing between the divs */
+      position: relative;
+    }
+
+    .picture-with-button:last-child {
+      margin-right: 0; /* Remove spacing for the last div */
+    }
+
+    .picture-with-button img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .picture-button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .picture-with-button:hover .picture-button {
+      opacity: 1;
+    }
+
+    .picture-with-button:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Layout styles */
+    .layout {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Button styles */
+    .previous-button {
+      display: block;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .previous-button a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .previous-button a:hover {
+      background-color: #555;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .slideshow {
+        height: 300px;
+      }
+
+      .layout {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .picture-with-button {
+        height: 200px; /* Adjust the height for smaller screens if needed */
+        margin-right: 0; /* Remove spacing for smaller screens */
+        margin-bottom: 20px; /* Set spacing between divs for smaller screens */
+      }
+
+      .picture-with-button:last-child {
+        margin-bottom: 0; /* Remove spacing for the last div on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="slideshow">
+        <img src="bedroom.jpg" alt="Image 1" class="active">
+        <img src="lighting.jpg" alt="Image 2">
+        <img src="balcony.jpg" alt="Image 3">
+        <img src="kitchenimage2.jpg" alt="Image 4">
+      </div>
+      <br>
+      <br>
+      <h1>Welcome to our Interior Designing Website</h1>
+      <p>Transforming spaces, one room at a time</p>
+    </header>
+
+    <div class="layout">
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="kitchenimage.jpg" alt="Left Image">
+          <a href="kitchenproj.html" class="picture-button">KITCHEN</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="bedroom.jpg" alt="Center Image">
+          <a href="bedroom.html" class="picture-button">BEDROOM</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="bathroom.jpg" alt="Right Image">
+          <a href="bathroom.html" class="picture-button">BATHROOM</a>
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="studyroom.jpg" alt="Left Image">
+          <a href="livingroom.html" class="picture-button">STUDYROOM</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="livingroom.jpg" alt="Center Image">
+          <a href="livingroom.html" class="picture-button">LIVINGROOM</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="picture-with-button">
+          <img src="balcony.jpg" alt="Right Image">
+          <a href="livingroom.html" class="picture-button">BALCONY</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="previous-button">
+      <a href="webproj.html">Go Back</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    // Slideshow functionality
+    const slideshow = document.querySelector('.slideshow');
+    const images = slideshow.querySelectorAll('img');
+    let currentItem = 0;
+
+    function showNextItem() {
+      images[currentItem].classList.remove('active');
+      currentItem = (currentItem + 1) % images.length;
+      images[currentItem].classList.add('active');
+    }
+
+    setInterval(showNextItem, 3000); // Change slide every 3 seconds
+  </script>
+</body>
+</html>

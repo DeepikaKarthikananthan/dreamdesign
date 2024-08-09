@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Partners</title>
+  <style>
+    /* CSS styles here */
+    ul#partners li {
+      margin-bottom: 10px;
+      background-color: #0a0909;
+      padding: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 2px 5px rgba(218, 165, 32, 0.4);
+      border-radius: 5px;
+      position: relative; /* Added */
+    }
+
+    ul#partners li:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      box-shadow: 0 0 15px 5px rgba(8, 0, 0, 0.8); /* Updated */
+      opacity: 0;
+      border-radius: 5px;
+      transition: opacity 0.3s ease;
+    }
+
+    ul#partners li:hover:before,
+    ul#partners li.selected:before {
+      opacity: 1;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      background-size: cover;
+      background-position: center;
+      animation: slideshow 10s infinite;
+    }
+
+    @keyframes slideshow {
+      0% {
+        background-image: url(kitchenimage.jpg); /* Change to your image path */
+        background-attachment: fixed;
+      }
+      25% {
+        background-image: url(lighting.jpg); /* Change to your image path */
+        background-attachment: fixed;
+      }
+      50% {
+        background-image: url(livingroom.jpg); /* Change to your image path */
+        background-attachment: fixed;
+      }
+      75% {
+        background-image: url(bathroom.jpg); /* Change to your image path */
+        background-attachment: fixed;
+      }
+      100% {
+        background-image: url(studyroom.jpg); /* Change to your image path */
+        background-attachment: fixed;
+      }
+    }
+
+    header {
+      padding: 20px;
+      background-color: #040000;
+      background-image: linear-gradient(pink,lavender, lightyellow);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      color: red;
+    }
+
+    #partner-list {
+      padding: 20px;
+      color: #333;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    ul#partners {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul#partners li {
+      margin-bottom: 10px;
+      background-image: linear-gradient(rgb(248, 249, 249),rgb(249, 249, 249), rgb(234, 239, 240));
+      padding: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 2px 5px rgba(218, 165, 32, 0.4);
+      border-radius: 5px;
+    }
+
+    ul#partners li:hover {
+      background-color: #e1e1e1;
+      box-shadow: 0px 2px 10px rgba(5, 177, 163, 0.8);
+    }
+
+    ul#partners li.selected {
+      background-color: #e1e1e1;
+      box-shadow: 0px 2px 10px rgba(10, 149, 154, 0.8);
+    }
+
+    #selected-partner {
+      margin-top: 20px;
+    }
+
+    .partner-content {
+      display: none;
+      margin-top: 20px;
+    }
+    .ding{
+      background-color: #040000;
+    }
+    .active {
+      display: block;
+    }
+
+    #partner-content-container {
+      margin-top: 20px;
+    }
+
+    .partner-description {
+      background-image: linear-gradient(pink,lavender, lightyellow);
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="ding">
+  <header>
+    <h1>Our Adorable Partners</h1>
+  </header>
+</div>
+
+  <section id="partner-list">
+    <h2>Our Partner List</h2>
+    <ul id="partners">
+      <li data-partner="partner1">PAINT MANAGEMENT</li>
+      <li data-partner="partner2">FURNITURE MANAGEMENT</li>
+      <li data-partner="partner3">FLOORING MANAGEMENT</li>
+      <li data-partner="partner4">LIGHTING MANAGEMENT</li>
+    </ul>
+    <div id="selected-partner"></div>
+    <div id="partner-content-container">
+      <div id="partner1" class="partner-content active">
+        <!-- Content for Partner 1 -->
+        <h3>Partner 1</h3>
+        <div class="partner-description">
+          <h3><center><b><u>NIPPON PAINT</u></b></center></h3>
+          <p>Nippon Paint’s unique range of products not only caters to your aesthetic needs but also to your functional needs.
+            Besides having a wide range of colours, Nippon Paint offers specialty products such as anti-bacterial paint and
+            low-odour paint.<br><br><center>
+            <img src="colorpallete.jpg" style="width:600px"></center><br>
+            Nippon Paint produces high-quality paints and coats for automotive, industrial and decorative sectors. Over the years, 
+            Nippon Paint has perfected its products by means of breakthrough paint technology, with an emphasis on innovation and
+             eco-friendliness.<br><br> We are driven by the philosophy of enhancing life through innovations – to consistently deliver paint 
+             solutions that not only serve your needs, but also protect the world we live in. After over ten years in the Indian market,
+              Nippon Paint is steadily becoming a household name.<br><br>
+             Apart from a range of interior, exterior and enamel finishes, 
+             we have many specialty products that showcase its technological prowess.<br><br>
+             <b><u>Quality Policy</u></b><br>
+             We are committed to providing the best quality products to our customers. We achieve this by using world-class manufacturing
+              practices, by continually improving the effectiveness of the quality management system, by understanding customer requirements 
+              and exceeding customer expectations, by complying with applicable statutory and regulatory requirements, by enhancing work 
+              environment through 5S practices and continually upgrading the competency of all our employees through training, by working
+               towards enhancing customer satisfaction and utilizing Total Employee
+              Involvement in achieving quality objectives. Our expertise and products make us one of the 
+              most desirable paint manufacturers in India.</p>
+        </div>
+      </div>
+      <div id="partner2" class="partner-content">
+        <!-- Content for Partner 2 -->
+        <h3>URBAN LADDER</h3>
+        <div class="partner-description">
+          <p>Urban Ladder is a design-led, omnichannel brand which offers furniture and home decor. With over 5000 designs across 35 
+            categories such as living, dining, bedroom, study, and decor, Urban Ladder was established
+             as an online-first brand in 2012. In 2017, Urban Ladder made a shift to offline retail, in an effort to become 
+             an omnichannel brand.<br><br>
+             Urban Ladder has both online and offline business model for distribution. 
+             The company delivers and installs all the products it offers. The brand has also put its products 
+             on marketplaces Amazon and Flipkart<br><br>
+             Urban Ladder collected the 'Best Digital Start-Up' Award at the 4th India Digital Awards conducted by Internet and Mobile 
+             Association of India.[19] Ashish Goel was voted by the Network 7 Media 
+             Group Jury as "Game Changer Entrepreneur of the year" 2016 at Satya Brahma founded 8th edition of India Leadership 
+             Conclave 2016.[20]</p>
+        </div>
+      </div>
+      <div id="partner3" class="partner-content">
+        <!-- Content for Partner 3 -->
+        <h3>Partner 3</h3>
+        <div class="partner-description">
+          <p>You are responsible for the building’s care and upkeep. Therefore, it should be a foregone conclusion that any flooring project has your involvement. This begins with the budgeting for replacement and continues with the process of selecting an appropriate product for a particular space, to managing the installation process, to following through on ensuring warranty issues are settled. For that reason, a start-to-finish "how to" guide on pertinent best practices for flooring installations can be particularly useful. 
+
+            Flooring is certainly one of the most important components of a building’s aesthetics and performance, so the flooring selected not only has to look good but also stay looking good for as long as possible. For that to happen, it’s important to have a plan — and follow it. 
+            
+            Whether you oversee millions of square feet or tens of thousands, you need to know how to select the appropriate flooring product for your application. Today’s flooring choices are extensive and finding the right one can be confusing and frustrating. With all the hard surface flooring options on the market, you must know what will work best where and how to use it. There is a lot of hype about these products being waterproof, having different core structures, and in general being the greatest thing since sliced bread. Think of this as the gold rush days in the Wild West.
+             Manufacturers are gunning for your business, so you have to be more knowledgeable and diligent than ever.</p>
+        </div>
+      </div>
+      <div id="partner4" class="partner-content">
+        <!-- Content for Partner 4 -->
+        <h3>Partner 4</h3>
+        <div class="partner-description">
+          <p>A lighting management system is the comprehensive amalgamation of all lighting control features that buildings require. They are characterized by the scope 
+            of programming new settings to the system to make lighting control customizable. Lighting Management system 
+            essentially work by establishing a network where all lighting devices are connected via a common interface. Therefore, 
+            these systems become enablers for seamless communication between the installed luminaires, which adds more to their functionality.
+
+            Overall, lighting management systems are the so Lighting Control Techniques- Inside A Lighting Control Panel lution for almost all lighting needs that can arise in a building. In this article, let us see the practical benefits of Lighting Management System for commercial spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Add click event handler to partner list items
+      $('#partners li').click(function() {
+        // Remove the 'selected' class from all partner list items
+        $('#partners li').removeClass('selected');
+
+        // Add the 'selected' class to the clicked partner list item
+        $(this).addClass('selected');
+
+        // Get the partner data attribute
+        var partner = $(this).data('partner');
+
+        // Hide all partner content
+        $('.partner-content').removeClass('active');
+
+        // Show selected partner content
+        $('#' + partner).addClass('active');
+
+        // Update selected partner text
+        var selectedPartner = $(this).text();
+        $('#selected-partner').text('Selected Partner: ' + selectedPartner);
+
+        // Scroll to the selected partner content
+        $('html, body').animate({
+          scrollTop: $('#' + partner).offset().top
+        }, 500);
+      });
+
+      // Highlight the first partner by default
+      $('#partners li:first').addClass('selected');
+
+      // Show the selected partner on page load
+      var defaultSelectedPartner = $('#partners li:first').text();
+      $('#selected-partner').text('Selected Partner: ' + defaultSelectedPartner);
+    });
+  </script>
+</body>
+</html>

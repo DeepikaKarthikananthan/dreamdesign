@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9e9e9; /* Updated background color */
+            background-image: url("bedroom.jpg");
+        }
+
+        h2 {
+            color: #450202;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #450202;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #720404;
+        }
+    </style>
+</head>
+<body>
+    <h2>LETS GET TO KNOW YOUR ESTIMATION</h2>
+    <form method="post" action="projcrt.php">
+        <label for="mytxt1">TYPE OF HOUSE</label>
+        <input type="text" name="mytxt1" id="mytxt1" required>
+        <br><br>
+        <label for="mytxt2">BUDJET</label>
+        <input type="text" name="mytxt2" id="mytxt2" required>
+        <br><br>
+        <input type="submit" name="mysubmit" value="Submit">
+    </form>
+</body>
+</html>

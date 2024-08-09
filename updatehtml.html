@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Review</title>
+    <style>
+        body {
+            background-image: url("bedroom3.jpg");
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: 'update.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        displayAlert(response);
+                    },
+                    error: function() {
+                        displayAlert('Error updating record');
+                    }
+                });
+            });
+
+            function displayAlert(message) {
+                alert(message);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2>Update Review</h2>
+            <label for="cname">Name:</label>
+            <input type="text" name="cname" id="cname" required>
+            <br><br>
+            <label for="cemail">Email:</label>
+            <input type="email" name="cemail" id="cemail" required>
+            <br><br>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" id="rating" min="1" max="5" required>
+            <br><br>
+            <label for="reviewdet">Review:</label>
+            <textarea name="reviewdet" id="reviewdet" rows="4" cols="50" required></textarea>
+            <br><br>
+            <input type="submit" value="Update Review">
+        </form>
+    </div>
+</body>
+</html>

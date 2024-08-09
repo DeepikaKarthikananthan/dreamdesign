@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kitchen Interiors</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      //background-color:grey;
+      background-image: linear-gradient(rgb(221, 142, 155),rgb(109, 109, 175), lightpink);
+    }
+
+    header {
+      text-align: center;
+      height: 100vh;
+      background-image: url('bedroomhalf.png');
+      
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    h1 {
+      color:rgb(147, 5, 143);
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      animation: glowText 1.5s ease-in-out infinite alternate;
+    }
+
+    p {
+      color: #d70c0c;
+      font-size: 18px;
+    }
+
+    /* Hero Section Styles */
+    #hero {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #450202;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    /* Gallery Section Styles */
+    #gallery {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .slideshow-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .slideshow-container img {
+      border-radius: 10px;
+    }
+
+    /* Features Section Styles */
+    #features {
+      text-align: center;
+    }
+
+    .feature {
+      display: inline-block;
+      width: 30%;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #111212;
+      border-radius: 0px;
+    }
+
+    .feature img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    /* Button Styles */
+    .rounded-button {
+      display: inline-block;
+      background-color: #450202;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .rounded-button:hover {
+      background-color: #720404;
+    }
+
+    /* Animation Keyframes */
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowText {
+      0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      50% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+      }
+      100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <br><br>
+    <h1>BEDROOM INTERIORS</h1>
+    <p>MADE YOU FEEL LIKE A HEAVEN</p>
+  </header>
+
+  <section id="hero">
+    <h2>Welcome to Our bedroom Interiors</h2>
+    <p>Explore stunning bedroom designs that inspire and transform your space.</p>
+    <a href="#gallery" class="btn">View Gallery</a>
+  </section>
+
+  <section id="gallery">
+    <h2>OUR BEDROOM DESIGNS</h2>
+    <div class="slideshow-container">
+      <!-- Slideshow images removed -->
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Why Choose Our bedroom Interiors?</h2>
+    <div class="feature">
+      <img src="bedroom2.jpg" alt="Feature 1">
+      <h3>Customizable Designs</h3>
+      <p>Create a bedroom that matches your style and needs with our customizable designs.</p>
+    </div>
+    <div class="feature">
+      <img src="bedroom3.jpg" alt="Feature 2">
+      <h3>High-Quality Materials</h3>
+      <p>We use only the finest materials to ensure durability and aesthetics.</p>
+    </div>
+    <div class="feature">
+      <img src="bedroom4.jpg" alt="Feature 3">
+      <h3>Expert Craftsmanship</h3>
+      <p>Our skilled craftsmen bring your dream kitchen to life with attention to detail.</p>
+    </div>
+    <div class="feature">
+      <img src="bedroom.jpg" alt="Feature 4">
+      <h3>Consultation</h3>
+      <p>Our skilled employees bring your dream kitchen to life with attention to detail.</p>
+    </div>
+    <div class="feature">
+      <img src="bedroomhalf.png" alt="Feature 5">
+      <h3>Space Planning</h3>
+      <p>Our skilled employees bring your dream kitchen to life with attention to detail.</p>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin-bottom: 40px;">
+    <a href="homeproj.html" class="rounded-button">Go Back to home page</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Slideshow
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("image");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Record Form</title>
+    <style>
+        body {
+            background-image: url('bedroom2.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 100px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Delete Record</h2>
+    <form action="delete.php" method="POST">
+        <label for="cemail">Email:</label>
+        <input type="text" id="cemail" name="cemail" required><br><br>
+        <input type="submit" value="Delete Record">
+    </form>
+</body>
+</html>
+

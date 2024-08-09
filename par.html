@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Partners</title>
+  <style>
+    /* CSS styles here */
+    ul#partners li {
+      margin-bottom: 10px;
+      background-color: #fff;
+      padding: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 2px 5px rgba(218, 165, 32, 0.4);
+      border-radius: 5px;
+      position: relative; /* Added */
+    }
+
+    ul#partners li:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.8); /* Updated */
+      opacity: 0;
+      border-radius: 5px;
+      transition: opacity 0.3s ease;
+    }
+
+    ul#partners li:hover:before,
+    ul#partners li.selected:before {
+      opacity: 1;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      background-size: cover;
+      background-position: center;
+      animation: slideshow 10s infinite;
+    }
+
+    @keyframes slideshow {
+      0% {
+        background-image: url(kitchenimage.jpg); /* Change to your image path */
+      }
+      25% {
+        background-image: url(lighting.jpg); /* Change to your image path */
+      }
+      50% {
+        background-image: url(livingroom.jpg); /* Change to your image path */
+      }
+      75% {
+        background-image: url(bathroom.jpg); /* Change to your image path */
+      }
+      100% {
+        background-image: url(studyroom.jpg); /* Change to your image path */
+      }
+    }
+
+    header {
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: red;
+    }
+
+    #partner-list {
+      padding: 20px;
+      color: #333;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    ul#partners {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul#partners li {
+      margin-bottom: 10px;
+      background-color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 2px 5px rgba(218, 165, 32, 0.4);
+      border-radius: 5px;
+    }
+
+    ul#partners li:hover {
+      background-color: #e1e1e1;
+      box-shadow: 0px 2px 10px rgba(5, 177, 163, 0.8);
+    }
+
+    ul#partners li.selected {
+      background-color: #e1e1e1;
+      box-shadow: 0px 2px 10px rgba(10, 149, 154, 0.8);
+    }
+
+    #selected-partner {
+      margin-top: 20px;
+    }
+
+    .partner-content {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    #partner-content-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Adorable Partners</h1>
+  </header>
+
+  <section id="partner-list">
+    <h2>Our Partner List</h2>
+    <ul id="partners">
+      <li data-partner="partner1">Partner 1</li>
+      <li data-partner="partner2">Partner 2</li>
+      <li data-partner="partner3">Partner 3</li>
+      <li data-partner="partner4">Partner 4</li>
+    </ul>
+    <div id="selected-partner"></div>
+    <div id="partner-content-container">
+      <div id="partner1" class="partner-content active">
+        <!-- Content for Partner 1 -->
+        <h3>Partner 1</h3>
+        <p>Partner 1 content goes here...</p>
+      </div>
+      <div id="partner2" class="partner-content">
+        <!-- Content for Partner 2 -->
+        <h3>Partner 2</h3>
+        <p>Partner 2 content goes here...</p>
+      </div>
+      <div id="partner3" class="partner-content">
+        <!-- Content for Partner 3 -->
+        <h3>Partner 3</h3>
+        <p>Partner 3 content goes here...</p>
+      </div>
+      <div id="partner4" class="partner-content">
+        <!-- Content for Partner 4 -->
+        <h3>Partner 4</h3>
+        <p>Partner 4 content goes here...</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Add click event handler to partner list items
+      $('#partners li').click(function() {
+        // Remove the 'selected' class from all partner list items
+        $('#partners li').removeClass('selected');
+
+        // Add the 'selected' class to the clicked partner list item
+        $(this).addClass('selected');
+
+        // Get the partner data attribute
+        var partner = $(this).data('partner');
+
+        // Hide all partner content
+        $('.partner-content').removeClass('active');
+
+        // Show selected partner content
+        $('#' + partner).addClass('active');
+
+        // Update selected partner text
+        var selectedPartner = $(this).text();
+        $('#selected-partner').text('Selected Partner: ' + selectedPartner);
+
+        // Scroll to the selected partner content
+        document.getElementById(partner).scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Highlight the first partner by default
+      $('#partners li:first').addClass('selected');
+
+      // Show the selected partner on page load
+      var defaultSelectedPartner = $('#partners li:first').text();
+      $('#selected-partner').text('Selected Partner: ' + defaultSelectedPartner);
+    });
+  </script>
+</body>
+</html>
+<p style="font-size: 15px;">Nippon Paint’s unique range of products not only caters to your aesthetic needs but also to your functional needs.
+    Besides having a wide range of colours, Nippon Paint offers specialty products such as anti-bacterial paint and
+    low-odour paint.<br><br>
+    Nippon Paint produces high-quality paints and coats for automotive, industrial and decorative sectors. Over the years, 
+    Nippon Paint has perfected its products by means of breakthrough paint technology, with an emphasis on innovation and
+     eco-friendliness. We are driven by the philosophy of enhancing life through innovations – to consistently deliver paint 
+     solutions that not only serve your needs, but also protect the world we live in. After over ten years in the Indian market,
+      Nippon Paint is steadily becoming a household name.
+     Apart from a range of interior, exterior and enamel finishes, 
+     we have many specialty products that showcase its technological prowess.<br><br>
+     <b><u>Quality Policy</u></b><br>
+     We are committed to providing the best quality products to our customers. We achieve this by using world-class manufacturing
+      practices, by continually improving the effectiveness of the quality management system, by understanding customer requirements 
+      and exceeding customer expectations, by complying with applicable statutory and regulatory requirements, by enhancing work 
+      environment through 5S practices and continually upgrading the competency of all our employees through training, by working
+       towards enhancing customer satisfaction and utilizing Total Employee
+      Involvement in achieving quality objectives. Our expertise and products make us one of the 
+      most desirable paint manufacturers in India.</p>
